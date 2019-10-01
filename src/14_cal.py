@@ -22,3 +22,24 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+console_args = sys.argv[1:]
+
+try:
+  arg_count = len(console_args)
+  if arg_count == 0:
+    present_datetime = datetime.now()
+    month = present_datetime.month
+    year = present_datetime.year
+    calendar.prmonth(year, month)
+  elif arg_count == 1:
+    month = console_args[0]
+    year = datetime.now().year
+    calendar.prmonth(year, int(month))
+  elif arg_count ==2:
+    month, year = console_args
+    calendar.prmonth(int(year), int(month))
+  else: 
+    raise Exception('')
+except Exception as err:
+  print('expected arguments in the form of [month] [year]'if err.__str__() == "" else f"\nTrace:\'{err}'")
