@@ -1,5 +1,5 @@
 # Intro to Python I
-<!-- test -->
+test
 It's time to learn a new language! Python!
 
 Python is a popular, easy-to-use programming language that has significant
